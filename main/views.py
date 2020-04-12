@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 
 
 def view(request):
-    sent = False
+    form = EmailConForm()
     if request.method == 'POST':
         form = EmailConForm(request.POST)
         if form.is_valid():
