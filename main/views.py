@@ -10,7 +10,7 @@ def view(request):
         if form.is_valid():
             cd = form.cleaned_data
             subject = 'send'
-            message = 'name: {}\nemail: {}\nphone {}'.format(cd['name'], cd['email'], cd['number'])
+            message = 'name: {}\nemail: {}\nphone: {}'.format(cd['name'], cd['email'], cd['number'])
             send_mail(subject, message, 'lkek91540@gmail.com', ['agentall228@gmail.com'])
 
         else:
