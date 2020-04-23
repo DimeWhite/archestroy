@@ -12,8 +12,14 @@ def view(request):
             subject = 'send'
             message = 'name: {}\nemail: {}\nphone: {}'.format(cd['name'], cd['email'], cd['number'])
             send_mail(subject, message, 'lkek91540@gmail.com', ['agentall228@gmail.com'])
-
-        else:
             form = EmailConForm()
-            return render(request, 'index.html', {'form': form})
-    return render(request, 'index.html', {'form': form})
+            sends1 = True
+            down = 1
+            return render(request, 'index.html', {'form': form, 'send': sends1, 'down': down})
+        else:
+            sends1 = False
+            down = 1
+            return render(request, 'index.html', {'form': form, 'send': sends1, 'down': down})
+    else:
+
+        return render(request, 'index.html', {'form': form})
